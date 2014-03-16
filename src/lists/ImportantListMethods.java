@@ -3,18 +3,49 @@ package lists;
 import java.util.*;
 public class ImportantListMethods {
 	public static void main(String[] args){
+		
+		//50 => 26 => 100
+		int[] a = new int[4];
+		a[0] = 0;
+		//a[1] = 1;
+		a[2] = 2;
+		a[3] = 3;
+		//100 to 104
+		//100 + 2(2) = 104
+		// 0 - 1 - 2 - 
+		a = new int[50];
+		//copy previous
+		a[4] = 4;
+		
+		
+		//100 eleme
+		a = new int[200];
+		
+		//Node => int value, int pointerTo
+		//0 -> 1 -> 2  -> 4 -> 5
+		List<Integer> list = new LinkedList<Integer>();
+		list.add(0);
+		list.add(1);
+		list.add(2);
+	
+		//heap => 100(head-> 1000) -> 1000(o2 -> 30005) -> 30005
+		//hash -> o1,o2,o3 
+		// hashCode(2) -> 
+		
+		// hash code() => 100 => o1, o2, o3, o4 etc => o1->o2->o3->04
+		
 		//Important list implementations
 		List listA = new ArrayList(); //suited in case of :  once constructed...after that there is no manipulation of data elements
 		List listB = new LinkedList(); //suited in case of :  insertion sort, rearranging elements in list etc
 		List listC = new Vector(); // Legacy
-		List listD = new Stack();
+		List listD = new Stack(); // first in last out
 		
 		mostCommonUsedListMethods();
 	}
 
 	private static void mostCommonUsedListMethods() {
 		List<String> listA = new ArrayList<String>();
-		listA.add("element 1");
+		listA.add("element 1");		 
 		listA.add("element 2");
 		listA.add("element 3");
 		listA.add(0, "element 0");
@@ -53,8 +84,8 @@ public class ImportantListMethods {
 
 
 		//access via new for-loop
-		for(Object object : listA) {
-		    String element = (String) object;
+		for(String object : listA) {			 
+		    String element = object;
 		}
 		
 		
@@ -68,12 +99,15 @@ public class ImportantListMethods {
 		listA.remove(0);  
 		listA.remove("element 3");
 		
+		//lisA.remove(o2);
+		
 		// copy data from one array list to another array list
 		// Many a times you need to create a copy of ArrayList for this purpose
 		// you can use addAll(Collection c) method of ArrayList in Java to copy
 		// all elements from on ArrayList to another ArrayList in Java
-		ArrayList<String> copyOfStringList = new ArrayList<String>();
+		ArrayList<String> copyOfStringList = new ArrayList<String>();		 
 		copyOfStringList.addAll(listA);
+		 
  
 		
 		//Replacing an element at a particular index
@@ -112,9 +146,22 @@ public class ImportantListMethods {
 		ArrayList<String> stringList =   (ArrayList<String>) Arrays.asList(new String[]{"One", "Two", "Three"}); //this is not read only List you can still update value of existing elements
 		
 		
+		
 		//If you want to assign empty list, use below one
 		List emotyList = Collections.EMPTY_LIST;
-		 
+		 		
+	}
+	
+	public List<String> getDuplicateElements(List<String> elementList){
 		
+		if(elementList == null || elementList.isEmpty()){
+			return Collections.EMPTY_LIST;			 
+		}
+		
+		List<String> dupList = new ArrayList<String>();
+		//business logic to get duplicate words
+		//add dup word to this new list
+		//duplist.add(word);
+		return dupList;
 	}
 }
